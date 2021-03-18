@@ -20,7 +20,7 @@ FirebaseJson updateData;
 FirebaseJson json1;
 String book_name = "Witcher";
 String path = "/books/" + book_name;
-bool mode_toggle;
+volatile bool mode_toggle = true;
 unsigned int lastTrigger = 0;
 int a=1;
 
@@ -31,7 +31,7 @@ void update_data(FirebaseData &fbdo, FirebaseJson &updateData, int data);
 void read_data(FirebaseJson &json1, FirebaseData &data);
 
 ICACHE_RAM_ATTR void toggle(){
-  if(millis() - lastTrigger <= 100)
+  if(millis() - lastTrigger >= 300)
   {
   Serial.println("Mode Toggled");
   if(mode_toggle == false){
@@ -75,7 +75,7 @@ void setup()
     set_data(fbdo,json1,path);
     get_data(fbdo, path);
 
-    attachInterrupt(digitalPinToInterrupt(4), toggle, CHANGE);
+    attachInterrupt(digitalPinToInterrupt(0), toggle, CHANGE);
 }
 
 
