@@ -9,10 +9,10 @@
 #define book_status 1
 
 
-#define FIREBASE_HOST "library-automation-f6467-default-rtdb.firebaseio.com"
-#define FIREBASE_AUTH "5TW44VPU76jBxLJIqehBp8qR2DAgeXzPZJm63wjg"
-#define WIFI_SSID "SID"
-#define WIFI_PASSWORD "96ginger01"
+#define FIREBASE_HOST "XXXXXXXXXXXXXXXXXXXXXXXXXXXX.firebaseio.com"
+#define FIREBASE_AUTH "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+#define WIFI_SSID "Your SSID"
+#define WIFI_PASSWORD "Your Password"
 
 
 const int RST_PIN = 22; // Reset pin
